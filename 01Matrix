@@ -1,0 +1,10 @@
+# Problem: Given a matrix consisting of 0 and 1, find the distance of the nearest 0 for each cell.
+
+# 分析：
+  # python如何处理矩阵
+  # 如何在一个类里面写多个相互调用的函数
+  # 解决问题的思路
+    # Step 1. 遍历一遍，建立两个list（一个包含所有零值的index，一个包含所有非零值的index）
+    # Step 2. 对于所有的零值元素，返回0
+    # Step 3. 对于所有的非零值元素。计算距离，并保留最小值
+    # Step 4. 将以上的最小值存储为矩阵并返回
