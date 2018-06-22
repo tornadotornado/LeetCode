@@ -23,9 +23,11 @@
             # python中range的应用  range（5）-> range(0,5)
     # 进一步的优化策略是使用特殊的数据结构
         # 困难2：使用什么样的数据结构
-            # 双重循环的方法速度太慢，只能击败11.28%的submission，用时5600ms，优化的算法应该可以把算法控制在70ms以内，针对该问题提升速度100倍
+            # 双重循环的方法速度太慢，只能击败11.28%的submission，用时5600ms，优化的算法应该可以把算法控制在50ms以内（最快的方法是在30ms左右）
+              针对该问题提升速度100倍
+            # 使用字典的方式来提升查询速度（空间换时间），使用字典后运行速度为47ms
 
-# 实战
+# 实战 (1) 基于双重循环的方法 
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -40,7 +42,22 @@ class Solution(object):
                 valueCur = nums[index1] + nums[index2]
                 if(valueCur == target):
                     return [index1, index2]
-                
+                    
+# 实战（2） 基于字典的方法
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """        
+        dicCheck = {}        
+        for i in range(len(nums)):
+            valuePair = target - nums[i];            
+            if valuePair in dicCheck:
+                return [dicCheck[valuePair], i];
+            else:
+                dicCheck[nums[i]] = i   
         
         
         
