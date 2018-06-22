@@ -1,0 +1,33 @@
+# Problem: Given an array of integers, return indices of the two numbers such that they add up to a specific value.
+# You may assume each input would have exatcly one solution, and you may not use the same element twice.
+
+# 分析
+    # LeetCode的模式是只需写一个内部函数，LeetCode负责相关的测试
+        # 困难0：LeetCode的运行模式是什么
+            # 在python里面，需要写的是一个类(class)，类中包含函数(def)
+        # 困难0.1：类在处理问题时的优势
+            # 封装，继承和多态 
+        # 困难0.2: python3 注释
+            # 单行注释 #, 多行注释 '''_______'''
+        # 困难0.3: object，self的含义
+        # 困难0.4: 继承和类型
+            # 金毛是狗的一种子类型（继承），大福是一只狗的名称（类型）  
+            # LeetCode中应用的是类型
+    # 最直接的方法是用双重循环，该方法的时间复杂度是O(n^2)
+        # 困难1：python如何实现与数组相关的双重循环
+    # 进一步的优化策略是使用特殊的数据结构
+        # 困难2：使用什么样的数据结构，
+
+# 实战
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        
+        
+        
+       
+           
