@@ -10,11 +10,17 @@
         # 困难0.2: python3 注释
             # 单行注释 #, 多行注释 '''_______'''
         # 困难0.3: object，self的含义
+            # 类的第一参数永远是类的本身实例变量self
         # 困难0.4: 继承和类型
             # 金毛是狗的一种子类型（继承），大福是一只狗的名称（类型）  
             # LeetCode中应用的是类型
+        # 困难0.5: List的一些理解
+            # 索引从0开始
     # 最直接的方法是用双重循环，该方法的时间复杂度是O(n^2)
         # 困难1：python如何实现与数组相关的双重循环
+            # python中有两种循环: 1）基于单元的循环 for fruit in fruits; 2）基于索引的循环 for index in range(len(fruits))
+                                    该题目需要使用基于索引的循环，但是python貌似不能实现
+            # python中range的应用  range（5）-> range(0,5)
     # 进一步的优化策略是使用特殊的数据结构
         # 困难2：使用什么样的数据结构，
 
@@ -25,7 +31,16 @@ class Solution(object):
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
-        """
+        """        
+        numsLen = len(nums)   # length of the list 'nums'        
+        
+        for index1 in range(numsLen)
+            for index2 in range(index1, numsLen)
+                
+        
+        
+        
+        
         
         
         
