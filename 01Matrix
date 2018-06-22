@@ -8,3 +8,42 @@
     # Step 2. 对于所有的零值元素，返回0
     # Step 3. 对于所有的非零值元素。计算距离，并保留最小值
     # Step 4. 将以上的最小值存储为矩阵并返回
+
+class Solution(object):
+    def updateMatrix(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[List[int]]
+        """
+
+        (numRow, numCol) = matrix.shape
+
+        listZero = []
+        listNonZero = []
+
+        matrixResult = [[0 for i in range(numCol)] for j in range(numRow)]
+
+        for i in range(numRow):
+            for j in range(numCol):
+                if matrix[i,j] == 0:
+                    listZero.append((i, j))
+                    matrixResult[i][j] = 0
+                else:
+                    listNonZero.append((i, j))
+
+        for elemNonZero in listNonZero:
+            iElem = elemNonZero[0]
+            jElem = elemNonZero[1]
+
+            minDist = (numRow + numCol) * 2  # define a large distance
+
+            for elemZero in listZero:
+                iElem0 = elemZero[0]
+                jElem0 = elemZero[1]
+                disCur = abs(iElem0 - iElem) + abs(jElem0 - jElem)
+                if disCur < minDist:
+                    minDist = disCur
+
+            matrixResult[iElem][jElem] = minDist
+
+        return (matrixResult)
