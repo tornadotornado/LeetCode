@@ -22,7 +22,8 @@
                                     该题目需要使用基于索引的循环，但是python貌似不能实现
             # python中range的应用  range（5）-> range(0,5)
     # 进一步的优化策略是使用特殊的数据结构
-        # 困难2：使用什么样的数据结构，
+        # 困难2：使用什么样的数据结构
+            # 双重循环的方法速度太慢，只能击败11.28%的submission，用时5600ms，优化的算法应该可以把算法控制在70ms以内，针对该问题提升速度100倍
 
 # 实战
 class Solution(object):
@@ -32,10 +33,13 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """        
-        numsLen = len(nums)   # length of the list 'nums'        
+        numsLen = len(nums)   # length of the list 'nums'    
         
-        for index1 in range(numsLen)
-            for index2 in range(index1, numsLen)
+        for index1 in range(numsLen):
+            for index2 in range(index1+1, numsLen):
+                valueCur = nums[index1] + nums[index2]
+                if(valueCur == target):
+                    return [index1, index2]
                 
         
         
