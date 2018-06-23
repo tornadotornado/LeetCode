@@ -18,7 +18,11 @@
             
       # 优化思路：将第二个数组的数与第一个数组的数进行比较，判断完大小后，直接一段一段进行处理
       
+   # 06/23 加入了unittest，分别测试了m+n为奇数或者偶数的情况
+      
 # 实战：
+import unittest
+
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
         """
@@ -65,8 +69,20 @@ class Solution(object):
             return (nums3[mid])
 
 
-m=Solution()
-print(m.findMedianSortedArrays([1,2],[3,4]))
+class TestSolution(unittest.TestCase):
+    def test_01(self):                    # even numbers
+        s = [1, 2]
+        p = [3, 4]
+        self.assertTrue(Solution().findMedianSortedArrays(s,p), 2.5)
+
+    def test_02(self):                    # odd numbers
+        s = [1, 2, 3]
+        p = [2, 3]
+        self.assertTrue(Solution().findMedianSortedArrays(s, p), 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
         
         
         
