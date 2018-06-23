@@ -1,13 +1,13 @@
 # Problem: This problem is self designed (starting with x in the title) to test applying the regular expression in Python
 
 # 分析
-  # 正则表达式的三大应用：定锚点，去噪点，取数据
-  
+  # 正则表达式的三大应用：定锚点，去噪点，取数据  
+  # 关键：1）使用合适的正则表达式判断模板
+         2) 在python的re包中使用合适的函数
+         3) 相关的后处理工作
+         4) 输入：str和regExp
 
-    # 检测手机号，qq号，邮箱是否合规
-    # 检测并替换敏感词汇
-    # 网页爬虫：从网页中爬取标题等信息
-    
+    # 案例x1：检测手机号，qq号，邮箱是否合规    
     # 案例一（提取）：请使用正则取出：Tech,Sales,内容1,内容2。要求最好返回值是一个二维数组：如：a[0][0] = ‘Tech’;a[0][1] = ‘Sales’;
     # 案例二（匹配）：<OPTION value="待处理">待处理</OPTION>，写一个正则表达式,匹配 "<OPTION value="待处理">"
     # 案例三（提纯）：如何获取一个字符串中的数字字符，并按数组形式输出，如dgfhfgh254bhku289fgdhdy675gfh输出[254,289,675]
@@ -25,3 +25,5 @@
     # 案例十五（替换）：将单词is替换为IS
     # 案例十六（精选）：去掉http协议的jpg文件的协议头
     # 案例十七（重构）找出数组中的表示日期的时间字符串，并修改格式为‘月-日-年’
+    
+
