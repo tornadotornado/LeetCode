@@ -10,11 +10,17 @@
       # 分析这个问题可以让自己的python编程提升一个level
       # 困难1. 
   
-  # 如何写优雅的主体函数和测试函数
-  
+  # 如何优雅地写单元测试函数
+      # 以 if __name__ == "__main__": unittest.main() 为函数入口
+      # 单元测试的主体为：
+        #   class TestSolution(unittest.TestCase):
+        #      def test_1(self):
+        #          s = " "
+        #          p = " "
+        #          self.assertTrue(Solution().isMatch(s,p)) 
   
 
-import unittest
+import unittest                                                               # python 通用的单元测试包
 
 class Solution(object):
     def isMatch(self, s, p):
@@ -60,11 +66,11 @@ class Solution(object):
         return table[-1][-1]
 
 
-class TestSolution(unittest.TestCase):
+class TestSolution(unittest.TestCase):                         # Unit Test的标准
     def test_none_0(self):
         s = ""
         p = ""
-        self.assertTrue(Solution().isMatch(s, p))
+        self.assertTrue(Solution().isMatch(s, p))              # assertTrue和assertFalse是unittest包中的两个子函数
 
     def test_none_1(self):
         s = ""
@@ -108,5 +114,5 @@ class TestSolution(unittest.TestCase):
         self.assertTrue(Solution().isMatch(s, p))
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":                              # Python程序的一个入口，该脚本既可以做主程序又可以做子程序                           
     unittest.main()
