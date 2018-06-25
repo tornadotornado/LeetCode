@@ -37,6 +37,40 @@
                # 可能有 + ()
             # 2.2 使用正则表达式提取完的数据存储在新的dic里面         
          # Step 3：输出整理好的信息 
+    
+    
+import json
+import re
+
+
+# Step 1: 读取JSON数据
+with open('phone.json') as json_data:
+    data = json.load(json_data)
+    print("Original data:      ", data)
+
+# Step 2： 使用正则表达式对数据进行处理
+# 2.1 只保留数字
+for keyDic in data:
+    num = re.sub('[^\d]+', "", data[keyDic])
+    data[keyDic] = num
+
+print("Data only number:   ",data)
+
+# 2.2 把开头的86，0086，086去除
+for keyDic in data:
+    num = re.sub('^86|^0086|^086*', "", data[keyDic])
+    data[keyDic] = num
+
+print("Data no area code:  ", data)
+
+dicResult = {}
+
+for keyDic in data:
+    resultMatch = re.match('^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$',data[keyDic])
+    if resultMatch != None:
+        dicResult[keyDic]=data[keyDic]
+
+print("Final result:       ", dicResult)
          
     
     # 案例一（提取）：请使用正则取出：Tech,Sales,内容1,内容2。要求最好返回值是一个二维数组：如：a[0][0] = ‘Tech’;a[0][1] = ‘Sales’;
